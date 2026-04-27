@@ -1,0 +1,25 @@
+Fetch SQL Query 
+
+Fetching Employees based on age - Age > 10
+
+Select * from employees 
+where age > 10;
+
+Select * from employees 
+where age > 10
+order by age asc;
+
+
+Student, Student_Hostel , Student_Scores
+
+Student_Entire 
+Table 1 : a,b,c
+Table 2: 1,2,3
+
+a1,a2,a3,b1,b2,b3,c1,c2,c3
+
+select a,b,c from t1
+union
+select a,c,b from t2;
+
+

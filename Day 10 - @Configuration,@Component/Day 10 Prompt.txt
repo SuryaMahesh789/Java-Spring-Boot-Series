@@ -1,0 +1,24 @@
+Day 10 
+@Configuration vs @Component
+
+@Configuration = Class level Annotation used to define a class that can be used for explicit bean creation in application and inside that Configuration class we define beans using @Bean annotation = method level annotation
+
+this way I need explanation detailed and clear for both the annotations. along with @bean aswell. and the differences we have for both.
+
+this time content should be strong and detailed and professional and elobarate and make it code heavy and more explanation from its start and the flow both fpr the component and the configuration annotations. also mention the summary of the flow and interview questions also.
+
+
+document should be more elobarative clear and actual syntax and more clear yet professional and also give common interview questions can be expected upto day 4 for interview ready persons 
+
+final note : linkedin post content short and crisp not to long and more interesting and interactive scenario based understanding and real life analogy and relating and actual terminology use funny tone if required
+
+Document should be elobarative clear with actual syntax and include most important one's and if it is too dry and not that important can skip and add most common interview questions upto to today with answers document we don't have length restrictions 
+
+starter and ender : as topic name and ender with a cut line to follow and save for next more intreactive
+
+hashtags : more important for better reach pull audience more reachhh max pulll to reachh
+
+
+important note : document should be go to document for the topic for revision clear and detailed elobarative actual terminology proper content and linkedin post has scenario or real life example based anlogy that sjhoukd be go to example or scebario to remember to backend revision guy the best i wiould ask for . i feel this is more important as previous days covers a lot fine don't worry about document comntent lenght but linkedi content shild of moderate to crisp as everyday not too long shoukd not be boring,, more reach requireddd more attention pullong typeee.
+
+Very imoortnat note : Hashtags are weak and code is good for theory for code it's weak. need code heavy and content driven and interview mode explanation anad elobaration

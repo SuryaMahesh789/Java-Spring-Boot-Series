@@ -1,0 +1,93 @@
+Day 9 :
+Mastering @ComponentScan @SpringBootConfiguration @Configuration @EnableAutoCOnfiguration @SpringBootAnnotation
+
+now let's deep dive into next important Annotation which we need to master.
+
+what is ComponentScan  annotation,Use of ComponentScan  Annotation, ComponentScan  Annotation Arguments.
+
+
+1.@ComponentScan
+
+What is Component Scanning in Spring Boot Application - Explain with Definition and Explanation 
+then let's dive to our application setup with SpringBootApplication base where application Starts and ApplicationContext (Spring IOC Container) created actual start point of the application.
+
+when application starts ApplicationContext starts IOC Container Initiliazed,then it will start looking for beans to initialize across the application, it looks at each and every java class in the application for the meta data or annotations to create the beans.
+
+but where to look at the application like which package to see to create the beans is defined by component Scanning.
+
+Use of ComponentScan Annotation:
+which package to look at for the Bean creation and initialization. Where to look for the bean.
+
+but when we look in our application we don't see any ComponentScan Annotation, ??
+
+there comes our Main Application where we start - @SpringBootApplication Annotation
+
+@SpringBootApplication is Combination of (Configuration + EnableAutoConfiguration + ComponentScan) Annotations.
+
+No Explicit definition of ComponentScan Required beauty of Spring.
+ComponentScan - scans all the Sub packages in the package where our main application resides.
+
+Ex: Our Main Application Resides inside the Ecommerce Package in which Service,COntrollers etc all are available as sub packages and there is another package next to ecommerce that package also has sub packages with beans and when we start our application beans and components are scanned and initialized in ecommerce package and sub packages not the other package because our main application with @SpringBootApplication Resides in this Ecommerce Package.
+
+Now our problem is how to Tackle thiss???
+
+how to make spring to scan the other package aswell and initliaze the beans.
+Sol: Add @ComponentScan(basePackages = {"com.project.ecom","com.project.ecomPayment"})
+below the @SpringBootApplication Annotation.
+
+and now if we run the application then both the packages are being scanned and beans are getting initialized
+
+Another option just
+Add @ComponentScan(basePackages = "com.project")
+scans all the packages in the main package of project and  now if we run the application then both the packages are being scanned and beans are getting initialized.
+
+Another option instead of mentioning in the main application - startpoint we can use Config.
+
+let's create A Config class and Add @ComponentScan(basePackages = {"com.project.ecomPayment"})
+and run the application we see ecomPayment not initialzed only ecom is initlaized that too beacse of main application is taking care of, this config is not working.
+
+Sol: ComponentScan Annotation should be used along with the Configuration Annotation.
+
+
+ Add 
+@Configuration
+@ComponentScan(basePackages = {"com.project.ecomPayment"})
+and run the application
+
+now, scans all the packages in the main package of project and  now if we run the application then both the packages are being scanned and beans are getting initialized.
+
+next will see Exclude filters, add those classes which we don't want to scan and initialize with example clearly.
+
+2.@SpringBootApplication
+
+
+Important = how @SpringBootApplication internally works
+Start with setting the context in Crisp Explanation of IoC Container,@Component Annotation,and Dependency Injection then dive to our actual topic SpringBootApplication annotation 
+
+SpringBootApplication annotation how reduces lot of code for IoC COntainer or ApplicationContext creation lot of others how it reduces and automates,
+should be annotated for the main entry class of the application starter of the application.
+
+@SpringBootApplication = @SpringBootConfiguration + @EnableAutoCOnfiguration +@ComponentScan
+
+@SpringBootConfiguration internally uses @COnfiguration annotation.
+@Configuration = we can annotate any class with this annotation and define which beans to initialize or which package to configure for component scanning and bean initialization.
+
+@EnableAutoCOnfiguration = v.v Imp
+ex whenever our application sees SpringStarterWeb Dependency then this Annotation responsible to enable AutoConfiguration more detailed required with example.
+
+
+
+document should be more elobarative clear and actual syntax and more clear yet professional and also give common interview questions
+
+final note : linkedin post content short and crisp not to long and more interesting and interactive scenario based understanding and real life analogy and relating and actual terminology use funny tone if required
+
+Document should be elobarative clear with actual syntax and include most important one's and if it is too dry and not that important can skip and add most common interview questions upto to today with answers document we don't have length restrictions 
+
+starter and ender : as topic name and ender with a cut line to follow and save for next more intreactive
+
+hashtags : more important for better reach pull audience more reachhh max pulll to reachh
+
+important note : document should be go to document for the topic for revision clear and detailed elobarative actual terminology proper content and linkedin post has scenario or real life example based anlogy that sjhoukd be go to example or scebario to remember to backend revision guy the best i wiould ask for . i feel this is more important as previous days covers a lot fine don't worry about document comntent lenght but linkedi content shild of moderate to crisp as everyday not too long shoukd not be boring,, more reach requireddd more attention pullong typeee.
+
+
+Main Important Note : Use the content which i gave that way i want too see the content in terms of story line and also additional info with definitions ,explanation and above content and example and summary aswell.

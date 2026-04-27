@@ -1,0 +1,36 @@
+Filtering row
+Grouping result set
+filtering groups
+order by result set
+asc desc
+in 
+...................
+
+
+select e.col1,e.col2,e.col3,a.col1,a.col2
+from table1 e
+inner join
+table2 a
+on e.id=a.id;
+
+
+TABLE1
+
+MADHAV,21,1
+SWETHA,22,null
+POORNA,23,2
+Bhanu,24,4
+
+
+TABLE 2
+
+1,200
+2,300
+3,500
+
+select c.name,c.age,c.order_id,o.value
+from customers c
+inner join
+orders o
+on
+c.order_id=o.order_id;

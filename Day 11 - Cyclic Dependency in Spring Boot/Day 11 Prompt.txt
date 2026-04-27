@@ -1,0 +1,108 @@
+Day 11
+Cyclic Dependency in Spring Boot
+
+Let's start with Defination and Clear explanation what it means clear and neat.
+
+Class A needs Class B to work
+Class B needs Class A to work
+two classes/beans depends on each other.
+so spring gets stuck in a loop trying to build them
+
+Example Understanding : Why ? first and let's see how to solve next.
+
+Setup :
+
+EntryPoint main application and 
+Student Entity
+controller- student controller with Student field injection and GetMapping,PutMapping and another normal function notifyStudent() which has some code to notify student by email.
+
+Student controller depends on Student field injection and autowired used for API Calls student.getname() student.updateStudent etc and same way student entity uses StudentController via Field Injection and uses that instance to notifyStudent using that funtion in Controller.
+
+this is Cyclic dependency explain clearly with steps and flow ith start from the main entry point application we run and how beans created and how spring finds this cyclic dependency and throws an error. give the error wht i throws.
+
+infinite bean creation and it's a problem.
+
+the above example i have taken randomly but you can take any good and valid example with code setup clear and elobarative with step by step etc how I explained with code and content and explanation I need.
+
+Fix 1: @Lazy
+
+we can put @Lazy below @Autowired in Student class for StudentController, which will create a Proxy object not the real object which will allow us to use and it create both the beans with out error.
+
+Explain Detailed how @Lazy Annotation works
+
+this is not best fix can be a hack, end of the day changing the design is the only option.
+
+Fix 2: Design change 
+
+put that function in service class and service instance as dependency injection in Student class field injection autowired.
+
+Example 2:
+
+new Setup
+two services depends on each other interdependent in bean creation.
+
+PostService depends on CommentService viceversa = Cyclic/Circular dependency.
+
+same sol quick hack: @Lazy annotation
+
+Perfect solution is to change the design.
+
+1st Solution is to use LazyInjection :Delays dependency resolution until needed breaking the cycle.
+
+2nd solution is to use Setter Injection : Avoid field injection and Constructor Injection use Setter injection which Allows dependencies to be set after the object creation aviding initial circularity.
+
+3rd Solution is : Application Properties 
+Spring.main.allow-circular-references=true 
+
+4th Solution Mediator design pattern - where a mediator class comes into the picture and takes cae of te communication avoiding the circular dependency.: refactoring code: Design change: restructure code to eliminate dependencies improving overall design.
+
+
+i want what is Cyclic Dependency in Spring Boot?
+how Cyclic Dependency in Spring Boot occurs?
+Different ways to fix Cyclic Dependency in Spring Boot?
+Best Practices to Avoid Cyclic Dependency in Spring Boot
+Interview tips.
+
+and main important is code setup for problem understanding and code setups for each fix of the problem.
+
+
+this way I need explanation detailed and clear for both the annotations. along with @bean aswell. and the differences we have for both.
+
+for linkedin Post content use a real life scenario example which suits best or this case.
+i'm thinking of a simple example - Mani and Mini are two friends who had a great fight and now Mani is waiting for Mini to Talk and Mini is waiting for Mani to talk. leading to a infinite loop same way how springboot also has this and what do we have to fix and slowl pulls them to read the document whoch will be clear and elobaratibve.
+
+this time content should be strong and detailed and professional and elobarate and make it code heavy and more explanation from its start and the flow both fpr the component and the configuration annotations. also mention the summary of the flow and interview questions also.
+
+
+document should be more elobarative clear and actual syntax and more clear yet professional and also give common interview questions can be expected upto day 4 for interview ready persons 
+
+final note : linkedin post content short and crisp not to long and more interesting and interactive scenario based understanding and real life analogy and relating and actual terminology use funny tone if required
+
+Document should be elobarative clear with actual syntax and include most important one's and if it is too dry and not that important can skip and add most common interview questions upto to today with answers document we don't have length restrictions 
+
+starter and ender : as topic name and ender with a cut line to follow and save for next more intreactive
+
+s : more important for better reach pull audience more reachhh max pulll to reachh
+
+
+important note : document should be go to document for the topic for revision clear and detailed elobarative actual terminology proper content and linkedin post has scenario or real life example based anlogy that sjhoukd be go to example or scebario to remember to backend revision guy the best i wiould ask for . i feel this is more important as previous days covers a lot fine don't worry about document comntent lenght but linkedi content shild of moderate to crisp as everyday not too long shoukd not be boring,, more reach requireddd more attention pullong typeee.
+
+Very importnat note : Strong s for better reach and followers.
+
+need code heavy and content driven and interview mode explanation anad elobaration
+
+
+final note: this document and linkedin post content with example should be goto example and notes for preparation.
+
+use dots arrows if required for post content.
+
+#SpringFramework #SpringBoot #JavaBackend
+ #BackendDevelopment #EnterpriseJava
+ #JavaDevelopers #SoftwareEngineering
+ #BackendEngineering #JobSwitch
+ #InterviewPreparation #Upskilling
+ #100DaysOfBackend #LearningInPublic
+ #CleanArchitecture #SystemDesign
+
+
+

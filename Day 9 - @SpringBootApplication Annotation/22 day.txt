@@ -1,0 +1,105 @@
+1. VIEWS
+
+virtual table that stores a query for reuse;
+
+syntax : view
+
+CREATE VIEW <view_name> as
+select * from .....;
+
+
+2. Stored procedures
+A Saved block of SQL Code - you can call it again and again
+good for reusable Queries.
+
+procedure
+
+.
+.
+.
+.
+
+
+end
+
+CREATE VIEW highscores
+.........;
+
+
+
+
+DELIMITER $$
+CREATE PROCEDURE GetHighScores(IN target INT)
+BEGIN
+  select * from
+  students
+  where marks > target;
+END $$
+DELIMITER;
+
+
+
+
+1. CREATE STORED PROCEDURE
+
+DELIMITER $$
+CREATE PROCEDURE procedure_name(paramaters)
+BEGIN
+ ----SQL STAMENTS
+END $$
+DELIMITER ;
+
+
+ex:
+
+
+DELIMITER $$
+CREATE PROCEDURE getAllStudents()
+BEGIN
+SELECT * FROM STUDENTS;
+END $$
+DELIMITER ;
+
+
+CALL getAllStudents();
+
+drop table table_name;
+
+drop procedure if exists getAllStudent;
+
+
+
+
+VIEWS VS STORED PROCEDURES
+
+VIEW :
+SAVED QUERY (LIKE A VIRTUAL TABLE)
+you can select from it as if it was a real table
+mostly used for simplifying complex select queries
+cannot contain control logics (loops,condition)
+cannot accept parameters
+always returns a result set
+simplifying complex selectqueries
+
+
+stored procedure
+
+a saved block of sql code ( can include multiple queries)
+can contain insert,update,delete,select
+can include logics (If,case,loo,conditions)
+can accept parameters (input/otput)
+may or may not return a result set
+
+
+
+view vs stored procedure
+
+VIEW:A SAVED FILTER ON NETFLIX : (8+ RATING ACTION MOVIES- HOLLYWOOD) 
+STORED PROCEDURE : A SAVED ROUTINE add, a movie to watchlist, update your profile
+
+
+SELECT * FROM Customers
+LIMIT 3 OFFSET 3;
+
+SELECT * FROM Customers
+LIMIT 1 ,3;
