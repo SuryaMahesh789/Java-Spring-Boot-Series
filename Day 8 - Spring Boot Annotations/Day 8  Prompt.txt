@@ -1,0 +1,81 @@
+Day 8 : Spring Boot Annotations 
+Set some context what annotations basically to understand the annotations
+
+@Controller
+@RestController
+@RequestMapping
+@GetMapping
+@PostMapping
+@PutMapping
+@DeleteMapping
+@PathVariable
+@RequestParam
+@RequestBody
+@ResponseBody
+@Component
+@Service
+@Repository
+@Autowired
+
+
+1. starts with Controller 
+if we annotate class with controller annotation then considered as controller class where we actually write the apis and entry point for any API request made.
+
+here needed complete explanation of movement of the request from the user to the application and inside applicatoon from server to dispatcherservlet to find handlerMapping 
+dispatcherservlet  will find the request by maooin the andlers in the controller to map what exactly user requesting for with URL.
+
+in the flow explanation that controller also has RequestMapping with path arguments
+so let's lil go back to our explanation that DispatcherServlet will searches for the request in side the controller with the help of RequestMapping and the path matches with the user request
+
+and HTTP method as get also to be Specified inside the Request Mapping with RequestMethod.GET
+
+if we specify @ResponseBody along with the RequestMapping Annotation for the method inside the Controller then the response will be in JSON , previously it was String if we mentiion the return types as string.
+
+so if we want to return the responsebody not UI then we 'll annotate the menthod inside the controller with ResponseBody , and this will be same if we have multiple methods.
+
+
+but if we see that ResponseBody  repeated multiple time for all the APIs we write in the controller so we can annotate the controller as RestController.
+
+RestController = Controller + ResponseBody (Combination).
+
+
+upto this w are donw with few annotations.
+but if we have multiple different apis in the controller each method call will have RequestMapping and need to mention the path and Request.Method as get/put/pt/delete 
+this also feels little redundant instead spring boot has a flexibility od using @GetMapping,@PutMapping,@DeleteMapping,@PostMapping seperately
+
+these are specializations of Requestmapping and no need to mention the type of HTTP method aswell,
+
+next let's see RequestParam, when we pass Id or variable with Request to map that from request to the API request in Controller we map using @RequestParam 
+two ways @RequestParam, @RequestParam(name ="id")
+
+so if the request has Query Parameter then above case works what if the request has PathVariable instead of QueryParameter then at that time @PathVariable Annotation works. 
+two ways @PathVariable , @PathVariable (name ="id")
+
+
+@RequestBody Annotation is used for getting the RequestBody sent for PostAPIs
+
+then at last we'll see @Component,@Service,@Repository,@Autowired annotations.
+
+
+so with these we'll see the annotations for now.
+
+but this should be more clear i repeat more detailed explanation with code for understanding annotations.
+
+for each annotation explanation what ever the controller method required give the code snippet at the explanation detailed and will be more clear as this should be go to document for the annotations for the interviews or backend Revision so this should be the best revisabledocument with clear detailed awand aong with the codes okay even if they are redundant or feels repeatitive okay but need clear content for the document 
+
+
+Remaining annotations will be discussed and prepared in coming days.
+
+
+document should be more elobarative clear and actual syntax and more clear yet professional and also give common interview questions can be expected upto day 4 for interview ready persons 
+
+final note : linkedin post content short and crisp not to long and more interesting and interactive scenario based understanding and real life analogy and relating and actual terminology use funny tone if required
+
+Document should be elobarative clear with actual syntax and include most important one's and if it is too dry and not that important can skip and add most common interview questions upto to today with answers document we don't have length restrictions 
+
+starter and ender : as topic name and ender with a cut line to follow and save for next more intreactive
+
+hashtags : more important for better reach pull audience more reachhh max pulll to reachh
+
+
+important note : document should be go to document for the topic for revision clear and detailed elobarative actual terminology proper content and linkedin post has scenario or real life example based anlogy that sjhoukd be go to example or scebario to remember to backend revision guy the best i wiould ask for . i feel this is more important as previous days covers a lot fine don't worry about document comntent lenght but linkedi content shild of moderate to crisp as everyday not too long shoukd not be boring,, more reach requireddd more attention pullong typeee.

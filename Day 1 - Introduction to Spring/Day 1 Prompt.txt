@@ -1,0 +1,33 @@
+good need more content for document and more context for post content 
+what ever is there is good need to make it bestt i'll guide you as below
+Introduction to Spring Framework
+Previously in J2EE we us EJB Technology for web application development for enterprise level application development for minimal starting level applications development we use JSP servelets for amazon like enterprise level applications and banking internet banking like enterprise level applications can't be developed only using JSP and Servelets in that case we need next level technology in J2EE like EJB technology, in that EJB technology identifying all flaws in EJB and optimizing them and created a framework alternative and optimzed and better version for developing enterprise level application development one such framewok is spring.
+to learn spring no prerequisite of learning EJB, we can directly start learning Spring.
+what does spring actually does
+It helps us to develop enterprise level web application development as an alternative to existing frameworks or tehnoloies like EJB, Spring Provides entire development infrastructure and self maintenance of this infrastructure that is provided by spring.
+Example Plain JDBC apploication without spring developer has to follow 8 steps starting from register driver till close JDBC Object. actually developer has to concentrate on Query Preparation and handling and executing the queries but with plain JDBC Developer has to do all unnecessary things or irelevant things to him starting from registering the driver tand establishing the connection and create statetment object till closinf the JDBC Object - lot of developer burden
+these kind of developer burdens are removed by this spring framework by providing spring jdbc template, which allows developers to concentrate on Queries rest all infrasture and burdens are handled and maintained by Spring by taking access to Spring JDBC template like 7-8 steps of normal JDBC is changed to 3 steps simple Spring JDBC Process of getting access to JDBC template abd prepare an execute SQL Queru anf gather and process the result .
+Spring framework is with Multiple different modules like includes Web,Data Access Spring Core Container,AOP,Test etc
+no requirement of keeping all of these modules intp the application rather we can load and use what all modules are required for our application development part that's why Spring we call as light weight framework ,simple framework and also sping does default best programming principles already applied by deafult followed in the steps of spring framework,
+Instead of using direct classes spring enforces Coding to Interfaces and from interfaces to sub ckasses enforces one layer of abstraction one good programming practice
+second is POJOs (Plain Old Java Object ) Norma java classes simple classes
+
+
+ 
+
+Spring framework alreayd uses these good progtrammiing practises ( interfaces and POJOs)
+and spring comes with Multiple module not with Single Module.
+Spring is Light weight,Aspect Oriented,IOC, Dependency Injection Framework
+spring is light weight - not necessary to load all the modukes rather yiu can load required modules for our application POV
+and for aspect oriented : Normal Application developent to add extra features like logging,security etc so to add theese additional features to the existing code base and features should ot effect anything exisitng while adding new features that facility is AOP - Aspect Oriented simply Seperates all these by Spring 
+IOC & DI : Heart and most impprtant topics with respect to Spring
+spting is an IOC & DI framework
+Old technologies like EJB : Tight Coupling, when one class is using other class features we need to create second class object in class 1 this way of creating ovjects in other class creates tight coupling ( need more explanation here with correct content and analogy )
+tight coupling example : buying new mobile and having a constraint that only airtel sim is suitable for this mobile is called tightvoupling to overcome this we expect a sim slot in a mobile where we can use any sim we don;t want to depend on any such on sim card like airtel like thiese constraints if we don't have then we call it as loose coupling, we can use any sim and insert in that sim slot and that decision of selecting sim is also equired to choose instantly chice is ours ( run time injection)
+still now our mobile is dependent on sim which is loose coupling but not exactly this airtel specific sim which is tight coupling 
+so DI tells us this don't create the objects here rather let's create or insert dependencies dynamically at runtime connecting and wiring the objects at runtime simp;e called dependency injection
+Mobile class is depends on sim class , but we don't create the objects there this dependency injection enforces loose coupling 
+Inversion of control : this dependecy injection is done by some other entity not my our application components someother outside third party takes this responsibility which is taking or inversing the control to someone outside which is called IOC. need clar explaatoon and with good analogy etc for this.
+all such features and optimizations are done and avl for this spring fraework for developing high END J2EE app developmebt also spring has Test module for seamless testing of our apploication like thos to make best application we need scuh good framework which is spring
+IOC and DI are anyway will be given deep in coming days, this can be clean teaser of trailer kindof thing for that 
+

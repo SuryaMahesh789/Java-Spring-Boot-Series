@@ -1,0 +1,42 @@
+Day 7 — @Component vs @Service vs @Repository
+
+Starts with what is what for the three annotations what they do why we use and where we use interviewr's point of view definition and cpntent level  understanding of thse and diving for better understanding with the below context 
+
+Layered Architecture & Annotations : which will be base for today and will dive into the topic actually
+
+
+Spring Boot application has Controller layer,Service layer,Repository Layer 
+
+request(api call) comes from Client moves to  Controller layer,Service layer,Repository Layers and communicates to DB and from DB.
+Application also have Entity,DTO,Utility,Entity,Config also plays important role in application
+What are Entities,DTOs how entity is exactly maps with DB Tables and, why DTO and What is DTO.
+
+Seperately How DTO is helpful and required to communicate in these layers from client to controller and controller to client and all inter layer communication, Conversion of DTO to Entity,Entity to DTO conversion and Usage.
+
+Utility and Config in the application used and clear understanding required. also show me how folder structure of a spring boot application will be for layered architecture. 
+
+and clean example of all these layers depicted clearly with all the ingredients mentioned as an example of complete base setup and understanding of out main topic (@Component vs @Service vs @Repository)
+
+let's use the above setup for depicting api call from client to movement of al layers till db using all DTOs and entity config utility and dto to entity conversion and viceversa from it is given back to client all details 
+ResponseEntity those might not be required as we are ot completelibg diving into JPAs rather discussing on the topic of @Component vs @Service vs @Repository so concentartion is on these annotations and three layers win which we use these as a main.
+
+once the setup is clear and content is explained completed then we'll start discussing diving more into our topic @Component vs @Service vs @Repository individual annotation explanation detailed elobarated what it does why how it works in interviewer's point of view complete understanding differences and questions we have on our topic.
+
+that example and explanation should cover the complete content of layered architecture and those annotations .
+
+two parts as similar previous days linkedin post content and document content 
+
+Linkedin post content let's give an interesting and interactive more attention pulling scenario based analogy for today's content and let's try to relate that with actual terminology and try to pull audience to read the document 
+
+document should be more elobarative clear and actual syntax and more clear yet professional and also give common interview questions can be expected upto day 4 for interview ready persons 
+
+final note : linkedin post content short and crisp not to long and more interesting and interactive scenario based understanding and real life analogy and relating and actual terminology use funny tone if required
+
+Document should be elobarative clear with actual syntax and include most important one's and if it is too dry and not that important can skip and add most common interview questions upto to today with answers document we don't have length restrictions 
+
+starter and ender : as topic name and ender with a cut line to follow and save for next more intreactive
+
+hashtags : more important for better reach pull audience more reachhh max pulll to reachh
+
+
+important note : document should be go to document for the topic for revision clear and detailed elobarative actual terminology proper content and linkedin post has scenario or real life example based anlogy that sjhoukd be go to example or scebario to remember to backend revision guy the best i wiould ask for . i feel this is more important as previous days covers a lot fine don't worry about document comntent lenght but linkedi content shild of moderate to crisp as everyday not too long shoukd not be boring,, more reach requireddd more attention pullong typeee.

@@ -1,0 +1,45 @@
+Day 2: 
+
+Tight Coupling,Loose Coupling,Dependency Injection
+Helps to convert Tight coupling to Loose Coupling
+In any project, we use multiple classes, and one object is used inside another class viceversa
+one class uses members of another class for this we are creating objects inside another class because of this causing tight coupling, instead of creating the object of class 2 inside class 1 causes tight coupling to avoid this instead of creating objects then and there we need to push the object or create object at runtime 
+
+Scenario based :
+
+Let's say if we want to buy a mobile and when we head to mobile store and ask for a mobile, if the person says that this mobile allows only one telecom provider example only airtel is supported for this mobile and this actually a tight coupling because we don't have the freedom of selecting the telecom provider or sim let's say if some prices drop or hikes or that telecom provider is stops the service then that device is non useful makes no sense, so to remove this tight coupling we ask for a mobile which just has sim slot where we have the choice or freedom of putting whatever the sim we like to put and whenever we like we can insert,
+
+
+this analogy holds true for this dependency injection concept this is a concept which helps to make tight to loose coupling this procedure enforces us to create or send the objects from outside Field,Constructor,Setter injection we can insert instead of creating the object with new keyword.
+
+
+Code : example
+
+Mobile is one class
+Airtel Sim,Jio Sim,Idea sim is seperate classes 
+inside mobile class we need to use Sim 
+
+tight coupling is like creating Airtel sim inside the mobile class with new keyword no freedom of changing or choicing the remaijing sim classes
+
+
+loose coupling is something like 
+
+Mobile is one class
+Sim is an interface and
+Airtel Sim,Jio Sim,Idea sim is seperate classes impelements Sim Interface
+inside mobile class we need to use Sim Class and we can select the class to create airtel,idea or jio whatever is required and our choice can be given thru setter,constructor injection new airtelsim() or new ideasim() or new JioSim() will be assigned from outside when mobile class is instantiated that time we will pass the selected sim class
+
+this way of having or using interface helps us to add one layer of abstraction to the methods instead of using classes directly.
+
+understand this scenario as an example and elobarate this clearly for day 2 content 
+
+in the similar old pattern i want content for day 2 
+one is for linkedIn post which is scenario based learning - highly interesting , making audience curious and making them highly interactive and pulling them to start the series by using simple and interesting and slight funny terminology yet simple and crisp scenario and end of this crisp scenario in post they should get tight coupling and loose coupling and procedure or technique from tight to loose is dependency injection and abstraction. and providing the document that has scenario based explanation with java classes and actual terminology and actual spring concept how tight coupling happens and how loose coupling and dependency inejction methods all these content in ana elobarative manner clear and less icons usage and more interactive and high attention pulling content both for post and document
+
+note: post content is simple clear and crisp - scenario based explanation high attention pulling and funny and interactive and not boring etc
+
+document content from scratch to end elobartive more content if required with actual professional terminology and programs and java codes if required with the same scenario wihout deviating end of this complete understanding of loose coupling and tight coupling and dependeny injection and types of DI 
+
+and first starts with day 2/100 like this with topic name like this ex Tight Coupling,Loose Coupling,Dependency Injection
+
+and end has one line to ask them to save,follow @me for continue this series with me share and comment to share ur ideas with me and end with more and more hashtags for bestt reachh and follwers shares and comments like this give me

@@ -1,0 +1,127 @@
+Day 6 
+Spring Bean Scopes
+
+4 Types of Scopes 
+Singleton,Prototype,Request,Session
+
+Fill Definitions here for 4 scopes with clear understanding
+
+Let's understand better with Example 
+Let's take SpringBoot Application ex: ScopeDemo Application 
+Controller - EmployeeController,UserController
+Entity - User,Employee
+
+Entities are having @Component
+Constructors and @PostCOnstruct menthod inside the Entity class it hold init() prints this.hashCode() to check which bean is injected same or new like that 
+
+UserController is RestCOntroller 
+
+@Autowired, User user field injection inside USerCOntoller 
+
+@PostConstruct inside COntroller same init() prints this.hashCode()  and user.hashCode() and also has simple getmapping fetchuser1 simple api 
+
+same way we also have employee controller in the similar format as usercontroller 
+employee controlle also injects user bean only rest all similar
+Context before explanation
+
+1.singleton scope 
+Default Scope or we can mention also : this means Single bean is only injected  means same bean is injected again if required - Eager initialsation while application starts beans with singleton scope is initialized first
+
+ specify the type as below for User Entity 
+@Scope("singleton")
+
+now if we start the application both employee controller and usercontroller using or injecting the same bean and i we see it is eagerly initialized we can see in application startup logs 
+
+simple flow how it works detailed (follows same bean lifecyle)
+
+Inside Employee controller it goes o employee controller constructor and prints and ythen sees user bean as dependency what i will fo it will go to user bean and try to initalize userbean and prints user bean constructor output and then inside userbean it checks is there any dependencies inside user entity no then it goes to postconstruct and prints the hashcode of userbean userbean does now employeecontroller postcontsruct and prints employeecontrollers hashcode overthere same follows for usercontroller also user cpntoller constructor and user bean dependenmcy inside user controller and tries to inject userbean independency but user is singleton so not initialized again as scope is singleton so ot finds that this bean is already there in spring ioc container so instead of creating the same bean again it injects the existing bean here in user controller and as then postconstrict of user bean prints the hashcode which is same as prev user bean hashcode and then user bean injected so comes back to usercontroller bean and goes to ppstconstruct of usercontroller and prinyts the suercontroller bean and userbean hashcode whete we can see that userbeans wherever and whenever injected all are same beans which created one at the start of the application 
+
+this hence tells that if we define the scope as singleton so injects the same bean any numner of times call/requires - which is default scope and early initialization 
+
+let's try same scope by running apis of both the controllers multiple times and check the console output we can observe the user beans reamains constant and same even we call both controllers multiple times.
+
+2.Prototype scope
+
+Lazy initialization : Each time new object is created, created when needed
+
+now with the same context let's add some extra code 
+
+starts from Employeecontroller now we have Employee bean along with userbean as field injection dependencies and employee entity also component with @postconstruct and print iniside the init() 
+
+Inside Employee entity there is one more user dependency as autowired field injection 
+
+employee is now singleton and user is prototype 
+employee controller and usercontroller are prototype 
+and start the application 
+
+employee first initialzes as it is singleton scope and starts initializing and sees user dependency inside the employee so needs to inject user now as it is required inside the employee class user bean is created and we see the user and employee are created as of now with hashcodes  and controllers won't create any beans as they are lazy initialization and protoype
+
+and now when we hit the api of employee controller 
+
+inisde employeecojtroller we see user,employee dependencies and tries to inject both and when we see the output the userbean is created new but the employee bean is used the same one as it is soimgleton already av in the spring ioc comntainer so available same beans same hashcode and inside so employee class is not initiated again just uses the existin bean and injects and then goes to postconstruct of the employee  controller 
+
+and when we hit usercontroler api then user bean inside the userconroller again created as it is protoyoe scope  so agaijn created and new one, each time yiu hit new bean created .
+
+let's do some tweak if we make employee also as prototype then when we start the application nothing is initalized and while hitting the api then at that time all are initialized with new beans each time as all are prototype beans 
+
+3.Request Scope
+
+One bean per request and lazy initialized
+
+in the same setup 
+
+Emplloyeecontoller,user contyroller  is request types 
+employee is prototype, user is request 
+
+run application now - no bean is initialized as no sinhgleton beans are available 
+now let's hit empoyee contpller api 
+now employeecontroller bean creates first and sees user,employee beans and user it initializes user then sees employee to initialize and starts but inside employee user is an dependency which is already an existing bean in this request as user is request type that bean is available in spring ioc container and injects the existing bean rather creating newly this. so this is the concept that within the request if same dependency or bean is required injects the same bean not creates newly. same bean is injected 
+within the single request same bean used but important to note if we hit the same api again it onsidered as new request each call is sepearete request and that request has same beans injected which might be diferent with the earlies request beans, but within the singke request same bean is used if it is request type.
+
+trickyy part :
+
+let's do small change that employee bean alone let's make it as singleton and run that throws the error because at application startup spring tries to create this bean but this employee bean has depenedency as user which is request type bean 
+
+as we are not hitting any request it throws the error 
+
+explain here more clear.
+unless we have some ongoing reuest we can't create ot inject from singleton .
+
+to resolve this we can use mode proxymode with targetclass to employee bean it solves by just creating a proxy not actual object of user dependecny
+
+
+request bean inside singleton this is how we handle the issue by proxymode
+
+
+last is 
+
+4.session scope:
+
+one bean per session 
+
+this explain in the same format with the same setup we have used for above
+
+document content :
+
+start explaining wirh definitions first clear nderstanding and features like early or lazy and new or same bean used like thta then for detailed understanding with the example setuo
+
+give the setip first controllers and beans components and springboot applivation 
+
+
+and for each bean tp explain use the scenario and flow as i explained above for wach bean explanation change the setup with bean scopes wheerever it is shown and give complete setup with that scope and explain what happens when we run and when we hit api for all four cases four different scopes cases and importnat parts clear elobarative perefct consise explanation deatailed understanding 
+
+
+
+Linkedin post content let's give an interesting and interactive more attention pulling scenario based analogy for today's content and let's try to relate that with actual terminology and try to pull audience to read the document and also document should be more elobarative clear and actual syntax and more clear yet professional and also give common interview questions can be expected upto day 4 for interview ready persons 
+
+final note : linkedin post content short and crisp not to long and more interesting and interactive scenario based understanding and real life analogy and relating and actual terminology use funny tone if required
+
+Document should be elobarative clear with actual syntax and include most important one's and if it is too dry and not that important can skip and add most common interview questions upto to today with answers document we don't have length restrictions 
+
+starter and ender : as topic name and ender with a cut line to follow and save for next more intreactive
+
+hashtags : more important for better reach pull audience more reachhh max pulll to reachh
+
+
+
+

@@ -1,0 +1,87 @@
+Day 4 : Spring Container : BeanFactory,ApplicationContext
+
+So far we have discussed DI,IoC and Specifically Spring Container of Spring is responsible for implementation of IoC,DI internally, we need to create the spring container and give the XML Configuaration/Java Code/Annotations etc for time being let's consider we need to provide XML Configuration about beans and what do we do with that all things that beans do etc then spring container will take care of object creation and wiring links and DI and IoC.
+
+
+Spring application importance : Supply required beans and how to instantiate that configuration also to be provided as meta data configuration as XML and Spring container to be created and this config to be provided to spring container then it take cares of everything
+
+let's dive into Spring Container creation.
+
+we have two interfaces to create spring container 
+BeanFactory : for simple applications
+ApplicationContext : for enterprise level applications
+
+create object for any of those two then spring container is created 
+but these two are interfaces how to create objects to these interfaces???
+
+we need to take subclasses /Implementation classes of those interfaces and then create objects to create spring container
+
+Let's see Implementation classes of those interfaces :
+
+BeanFactory = XMLBeanFactory 
+for this to create xml file ( config.xml ) is required first create this xml configuration file that contains all the beans to be created with Bean id,bean class extra bean configuration etc to be provided 
+like this  all beans data provided req for application in xml config file 
+
+(Insert Actual XML confifuration as an example )
+
+once this xml file is completely ready then will create Spring Container - which is object creation for XMLBeanFactory Implementation Class of BeanFactory Interface and assign this XML Config class to that Spring Container
+
+BeanFacory f - new XMLBeanFactory(config.xml) is not valid
+it allows us if we use Resource interface to pass this config.xml file
+
+Resource Interface has two Implementation Classes below
+
+ClassPathResource
+FileSystemResource
+
+ex 
+Resource r = new ClassPathResource("config.xml")
+BeanFacory f - new XMLBeanFactory(r) is not valid
+
+
+if xml is there in the application code then ClassPathResource else if code in someother file path location then FileSystemResource
+
+Resource r = new FileSystemResource("c://config.xml")
+
+i have given temporary code u give the actual code to create this spring container and config.xml with proper explanation & usecase
+
+and let's see ApplicationContext which is actually more important as we develop Enterprise level applications 
+
+here we don't require Resource directly implementation class takes the XML Config file
+
+Implementation classes for Application Context 
+
+ClassPathApplicationContext
+FileSystemApplicationContext
+XMLWebApplicationContext
+AnnotationConfigApplicationContext
+AnnotationConfigWebApplicationContext
+
+
+Ex: 
+
+ApplicationContext a = new ClassPathApplicationContext("config.xml")
+
+Note: Include Actual Syntax for XMLConfig file and Spring Container Creation just for better understanding i used an example synatax
+
+upto this i planned for Day 4 content upto this part whatver is required include that as well incase i missed anything thing and from next day let's see more into handson without any doubts we are done for theory and withthis we are ready to start handson 
+
+
+in the samepattern let's do for day 4 
+
+Linkedin post content let's give an interesting and interactive more attention pulling scenario based analogy for today's content and let's try to relate that with actual terminology and try to pull audience to read the document and also document should be more elobarative clear and actual syntax and more clear yet professional and also give common interview questions can be expected upto day 4 for interview ready persons 
+
+final note : linkedin post content short and crisp not to long and more interesting and interactive scenario based understanding and real life analogy and relating and actual terminology use funny tone if required
+
+Document should be elobarative clear with actual syntax and include most important one's and if it is too dry and not that important can skip and add most common interview questions upto to today with answers document we don't have length restrictions 
+
+starter and ender : as topic name and ender with a cut line to follow and save for next more intreactive
+
+hashtags : more important for better reach pull audience more reachhh max pulll to reachh
+
+
+
+
+
+
+
