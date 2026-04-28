@@ -1,4 +1,4 @@
-# 🚀 Java Spring Boot Series — The Complete Backend Revision Hub
+# Java Spring Boot Series — The Complete Backend Revision Hub
 
 <p align="center">
   <b>A structured, no-fluff, interview-focused repository to master Spring Boot & Backend Engineering</b>
