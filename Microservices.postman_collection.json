@@ -1,0 +1,428 @@
+{
+  "info": {
+    "_postman_id": "af2fb042-d3a1-4380-be7d-f1bcddfa6627",
+    "name": "Microservices",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54072491",
+    "_collection_link": "https://go.postman.co/collection/54072491-af2fb042-d3a1-4380-be7d-f1bcddfa6627?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get Employee Details",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/employee-app/api/employee/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "employee-app",
+            "api",
+            "employee",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Address Details",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/address-app/api/address/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "address-app",
+            "api",
+            "address",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Employee Details With Address Details Rest Template",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/employee-app/api/employeeWithAddress/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "employee-app",
+            "api",
+            "employeeWithAddress",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Addresses",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/address-app/api/allAddresses",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "address-app",
+            "api",
+            "allAddresses"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Address Details - Instance 2",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8082/address-app/api/address/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "address-app",
+            "api",
+            "address",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Addresses From Employee Service",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/employee-app/api/employeeAllAddresses",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "employee-app",
+            "api",
+            "employeeAllAddresses"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eureka Apps",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8761/eureka/apps",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8761",
+          "path": [
+            "eureka",
+            "apps"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete/De Register App Instance from Eureka Server",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8761/eureka/v2/apps/EMPLOYEE-SERVICE-NEW/192.168.1.36:employee-service-new:8080",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8761",
+          "path": [
+            "eureka",
+            "v2",
+            "apps",
+            "EMPLOYEE-SERVICE-NEW",
+            "192.168.1.36:employee-service-new:8080"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register a Application Instance to Eureka Server",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8761/eureka/v2/apps/EMPLOYEE-SERVICE-NEW",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8761",
+          "path": [
+            "eureka",
+            "v2",
+            "apps",
+            "EMPLOYEE-SERVICE-NEW"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Take Instance Out Of Service",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8761/eureka/v2/apps/EMPLOYEE-SERVICE-NEW/192.168.1.36:employee-service-new:8080/status?value=OUT_OF_SERVICE",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8761",
+          "path": [
+            "eureka",
+            "v2",
+            "apps",
+            "EMPLOYEE-SERVICE-NEW",
+            "192.168.1.36:employee-service-new:8080",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "value",
+              "value": "OUT_OF_SERVICE"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Query for all appID instances",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8761/eureka/apps/EMPLOYEE-SERVICE-NEW",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8761",
+          "path": [
+            "eureka",
+            "apps",
+            "EMPLOYEE-SERVICE-NEW"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Employee Details With Address Details Web Client",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/employee-app/api/employeeWithAddressWC/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "employee-app",
+            "api",
+            "employeeWithAddressWC",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Employee With Address - Rest Template and HardCoded URL",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/employee-app/api/employeeWithAddressHardCodedURL/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "employee-app",
+            "api",
+            "employeeWithAddressHardCodedURL",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Employee With Address - Rest Template and Eureka - Discovery Client",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/employee-app/api/employeeWithEureka/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "employee-app",
+            "api",
+            "employeeWithEureka",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Employee With Address - Rest Template and Eureka & LoadBalancer Client",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/employee-app/api/employeeWithEurekaAndLoadBalancerClient/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "employee-app",
+            "api",
+            "employeeWithEurekaAndLoadBalancerClient",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Employee With Address - Rest Template and Eureka & LoadBalanced Annotation",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/employee-app/api/employeeWithEurekaAndLoadBalancerClientAnnotation/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "employee-app",
+            "api",
+            "employeeWithEurekaAndLoadBalancerClientAnnotation",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "FeignClient with Eureka & LoadBalancer",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/employee-app/api/employeeWithAddressFeignEurekaLB/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "employee-app",
+            "api",
+            "employeeWithAddressFeignEurekaLB",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
